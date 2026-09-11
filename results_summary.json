@@ -1,0 +1,145 @@
+{
+  "model": {
+    "architecture": "ResNet18",
+    "parameters": 11173962,
+    "epochs": 30,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "scheduler": "CosineAnnealingLR",
+    "seed": 42
+  },
+  "data": {
+    "dataset": "CIFAR-10",
+    "train_samples": 45000,
+    "calibration_samples": 5000,
+    "clean_test_samples": 10000,
+    "shift": "Gaussian noise",
+    "shift_source": "CIFAR-10-C"
+  },
+  "calibration": {
+    "temperature": 2.9429309368133545,
+    "clean_test": {
+      "accuracy": 0.8608,
+      "raw_ece": 0.10317936803996564,
+      "calibrated_ece": 0.015537871396541636,
+      "raw_brier": 0.2375306636095047,
+      "calibrated_brier": 0.20148232579231262
+    }
+  },
+  "distribution_shift": [
+    {
+      "severity": 1,
+      "accuracy": 0.777400016784668,
+      "raw_confidence": 0.9481766819953918,
+      "calibrated_confidence": 0.8261574506759644,
+      "raw_aurc": 0.06751737169568725,
+      "calibrated_aurc": 0.06581250298994495,
+      "raw_ece": 0.17077668339014052,
+      "calibrated_ece": 0.04884462621957066,
+      "raw_brier": 0.381136029958725,
+      "calibrated_brier": 0.31371816992759705
+    },
+    {
+      "severity": 2,
+      "accuracy": 0.6689000129699707,
+      "raw_confidence": 0.9300909042358398,
+      "calibrated_confidence": 0.7807822823524475,
+      "raw_aurc": 0.15016227633880022,
+      "calibrated_aurc": 0.14605759140429342,
+      "raw_ece": 0.261293153873086,
+      "calibrated_ece": 0.11201073861420154,
+      "raw_brier": 0.5735002756118774,
+      "calibrated_brier": 0.47263842821121216
+    },
+    {
+      "severity": 3,
+      "accuracy": 0.5364000201225281,
+      "raw_confidence": 0.9178789258003235,
+      "calibrated_confidence": 0.7477996349334717,
+      "raw_aurc": 0.2934628763991125,
+      "calibrated_aurc": 0.28515630514864376,
+      "raw_ece": 0.38147884216457606,
+      "calibrated_ece": 0.21194925750792026,
+      "raw_brier": 0.82161545753479,
+      "calibrated_brier": 0.6744160056114197
+    },
+    {
+      "severity": 4,
+      "accuracy": 0.46889999508857727,
+      "raw_confidence": 0.91400545835495,
+      "calibrated_confidence": 0.7373104691505432,
+      "raw_aurc": 0.3706858508141019,
+      "calibrated_aurc": 0.36092559028735166,
+      "raw_ece": 0.44525580033063883,
+      "calibrated_ece": 0.2686549950629473,
+      "raw_brier": 0.947055459022522,
+      "calibrated_brier": 0.7737573981285095
+    },
+    {
+      "severity": 5,
+      "accuracy": 0.4122999906539917,
+      "raw_confidence": 0.9130404591560364,
+      "calibrated_confidence": 0.7339954972267151,
+      "raw_aurc": 0.4452319070827825,
+      "calibrated_aurc": 0.43469753274300005,
+      "raw_ece": 0.5008900010704995,
+      "calibrated_ece": 0.321783937650919,
+      "raw_brier": 1.0530701875686646,
+      "calibrated_brier": 0.8624984622001648
+    }
+  ],
+  "error_detection": [
+    {
+      "severity": 0,
+      "raw_auroc": 0.8843258943831986,
+      "calibrated_auroc": 0.887390488799513,
+      "raw_ap": 0.5043384817697578,
+      "calibrated_ap": 0.5218272665565564
+    },
+    {
+      "severity": 1,
+      "raw_auroc": 0.8446467895496101,
+      "calibrated_auroc": 0.8499660559040882,
+      "raw_ap": 0.5583446528630309,
+      "calibrated_ap": 0.5778705711151989
+    },
+    {
+      "severity": 2,
+      "raw_auroc": 0.7821750699036211,
+      "calibrated_auroc": 0.7882650956806028,
+      "raw_ap": 0.5961131614267192,
+      "calibrated_ap": 0.6062620936553689
+    },
+    {
+      "severity": 3,
+      "raw_auroc": 0.7069529977757317,
+      "calibrated_auroc": 0.7147662266385882,
+      "raw_ap": 0.6358825899144078,
+      "calibrated_ap": 0.6492456719201531
+    },
+    {
+      "severity": 4,
+      "raw_auroc": 0.6835649233179294,
+      "calibrated_auroc": 0.6919837745061604,
+      "raw_ap": 0.671606186599806,
+      "calibrated_ap": 0.6852252358882494
+    },
+    {
+      "severity": 5,
+      "raw_auroc": 0.6574479926866847,
+      "calibrated_auroc": 0.6656030647845882,
+      "raw_ap": 0.699763376633228,
+      "calibrated_ap": 0.7113057062976557
+    }
+  ],
+  "selective_prediction": {
+    "coverage_levels": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      0.9
+    ]
+  }
+}
